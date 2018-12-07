@@ -293,11 +293,11 @@ void log_AcceptTcpConnection(
 	int port;
 	string peer = get_peer_address(sock, port);
 
-	fprintf(file, "TCP Connection from %d.%d.%d.%d:%d to %s:%d\n",
-		((client_addr.sin_addr.s_addr) & 0x00000ff),
-		((client_addr.sin_addr.s_addr >> 8) & 0x00000ff),
-		((client_addr.sin_addr.s_addr >> 16) & 0x00000ff),
-		((client_addr.sin_addr.s_addr >> 24) & 0x00000ff),
+	char ipstr[INET6_ADDRSTRLEN];
+	inet_ntop(AF_INET, &client_addr.sin_addr, ipstr, sizeof ipstr);
+
+	fprintf(file, "TCP Connection from %s:%d to %s:%d\n",
+		ipstr,
 		htons(client_addr.sin_port),
 		peer.c_str(),
 		LISTEN_PORT
