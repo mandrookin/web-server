@@ -1,15 +1,20 @@
 #include "stdafx.h"
+
+const int	LISTEN_PORT = 8080;
+
 #if ! defined(_WIN32)
-	#include <sys/socket.h>
-	#include <arpa/inet.h>
-	#include <unistd.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <pwd.h>
 #else
-	#pragma comment(lib,"Ws2_32.lib")
-	#include <winsock2.h>
-	#include <WS2tcpip.h>
-	#include <io.h>
-	#define write _write
-	#define close _close
+#pragma comment(lib,"Ws2_32.lib")
+#include <winsock2.h>
+#include <WS2tcpip.h>
+#include <io.h>
+#define write _write
+#define close _close
 #endif
 
 #include <stdio.h>
@@ -61,36 +66,36 @@ vector <string> split(const string &s, char delimiter)
 	return tokens;
 }
 
-	// Some of HTTP session options
-	string host_option;
-	int port_option;
-	bool keep_alive;
-	string cache_control_option;
-	string user_agent;
-	string accept_encoding;
-	string accept_languages;
-	string referer;
-	string upgrade_insecure_requests;
-	vector<string> accept_format_list;
+// Some of HTTP session options
+string host_option;
+int port_option;
+bool keep_alive;
+string cache_control_option;
+string user_agent;
+string accept_encoding;
+string accept_languages;
+string referer;
+string upgrade_insecure_requests;
+vector<string> accept_format_list;
 
-	void parse_accepting_formats(string formats)
+void parse_accepting_formats(string formats)
+{
+	accept_format_list.clear();
+
+	vector <string> option = split(formats, ';');
+	for (vector <string>::iterator item = option.begin(); item != option.end(); item++)
 	{
-		accept_format_list.clear();
-
-		vector <string> option = split(formats, ';');
-		for (vector <string>::iterator item = option.begin(); item != option.end(); item++)
+		vector <string> subitems = split(*item, ',');
+		for (vector <string>::iterator subitem = subitems.begin(); subitem != subitems.end(); subitem++)
 		{
-			vector <string> subitems = split(*item, ',');
-			for (vector <string>::iterator subitem = subitems.begin(); subitem != subitems.end(); subitem++)
+			bool is_format = subitem->find("/") != std::string::npos;
+			if (is_format)
 			{
-				bool is_format = subitem->find("/") != std::string::npos;
-				if (is_format)
-				{
-					accept_format_list.push_back(*subitem);
-				}
+				accept_format_list.push_back(*subitem);
 			}
 		}
 	}
+}
 
 
 void parse_request_options(vector <string> lines)
@@ -111,7 +116,7 @@ void parse_request_options(vector <string> lines)
 			if (option.size() > 2)
 				port_option = std::atoi(option[2].c_str());
 
-//			printf("Host: '%s:%d'\n", host_option.c_str(), port_option);
+			//			printf("Host: '%s:%d'\n", host_option.c_str(), port_option);
 		}
 		else if (option[0] == "\nConnection")
 		{
@@ -183,7 +188,7 @@ void response_on_get_request(int client, string pagename)
 		content_type = "application/xml";
 		binary = false;
 	}
-	else if(ext == "ico")
+	else if (ext == "ico")
 		content_type = "image/png";
 	else
 	{
@@ -198,21 +203,14 @@ void response_on_get_request(int client, string pagename)
 
 	string http_response = "HTTP/1.1 " + std::to_string(response_code) + " OK\r\n";
 	http_response += "Date: Wen 27 Nov 2018 17:30:15 GMT\r\n";
-	http_response += "Server: MyCoolServer/0.0.1\r\n";
+	http_response += "Server: MyCoolServer/0.0.2\r\n";
 	http_response += "Content-Length: " + len.str() + "\r\n";
 	http_response += "Content-Type: " + content_type + "\r\n";
 	http_response += "Connection: Closed\r\n";
 	http_response += "\r\n";
 
-//	if (!binary)
-	{
-		http_response += html;
-		send(client, http_response.c_str(), http_response.length(), 0);
-	}
-	//else
-	//{
-	//	send(client, http_response.c_str(), http_response.length(), 0);
-	//}
+	http_response += html;
+	send(client, http_response.c_str(), http_response.length(), 0);
 }
 
 void  serve(int client)
@@ -262,25 +260,55 @@ void  serve(int client)
 #endif
 }
 
-void log_AcceptTcpConnection(
-	FILE		*	file, 
-	address_t 		client_addr, 
-	address_t 		server_addr)
+string get_peer_address(int sock, int &port)
 {
-	fprintf(file, "TCP Connection from %d.%d.%d.%d:%d to %d.%d.%d.%d:%d\n",
+	socklen_t len;
+	struct sockaddr_storage addr;
+	char ipstr[INET6_ADDRSTRLEN];
+
+	len = sizeof addr;
+	getpeername(sock, (struct sockaddr*)&addr, &len);
+
+	// deal with both IPv4 and IPv6:
+	if (addr.ss_family == AF_INET) {
+		struct sockaddr_in *s = (struct sockaddr_in *)&addr;
+		port = ntohs(s->sin_port);
+		inet_ntop(AF_INET, &s->sin_addr, ipstr, sizeof ipstr);
+	}
+	else { // AF_INET6
+		struct sockaddr_in6 *s = (struct sockaddr_in6 *)&addr;
+		port = ntohs(s->sin6_port);
+		inet_ntop(AF_INET6, &s->sin6_addr, ipstr, sizeof ipstr);
+	}
+
+	return string(ipstr);
+}
+
+// It takes an IP address of interface which accepted connection
+void log_AcceptTcpConnection(
+	FILE		*	file,
+	address_t 		client_addr,
+	int				sock)
+{
+	int port;
+	string peer = get_peer_address(sock, port);
+
+	fprintf(file, "TCP Connection from %d.%d.%d.%d:%d to %s:%d\n",
 		((client_addr.sin_addr.s_addr) & 0x00000ff),
 		((client_addr.sin_addr.s_addr >> 8) & 0x00000ff),
 		((client_addr.sin_addr.s_addr >> 16) & 0x00000ff),
+		((client_addr.sin_addr.s_addr >> 24) & 0x00000ff),
 		htons(client_addr.sin_port),
-		(client_addr.sin_addr.s_addr >> 24),
-		((server_addr.sin_addr.s_addr) & 0x00000ff),
-		((server_addr.sin_addr.s_addr >> 8) & 0x00000ff),
-		((server_addr.sin_addr.s_addr >> 16) & 0x00000ff),
-		(server_addr.sin_addr.s_addr >> 24),
-		htons(server_addr.sin_port)
+		peer.c_str(),
+		LISTEN_PORT
 		);
+
+	// You can modify this for writing connection info to database
 }
 
+// Under Windows HTTP_ROOT is directory where sever's executable file is located
+// Unnder Linux it take pages from user's home directory
+// TODO: Set HTTP_ROOT by config or/and by command line parameter
 void Prepare_HTTP_ROOT()
 {
 #if defined (_WIN32)
@@ -288,16 +316,23 @@ void Prepare_HTTP_ROOT()
 #else
 	// We use it in classroom
 	http_root_folder = "/home";
+	struct passwd *pw = getpwuid(getuid());
+	if (pw)
+		http_root_folder = pw->pw_dir;
+	else
+		http_root_folder = "/tmp";
+
 #endif
 }
 
 // all bits set - allow access, otherwise deny any access
 unsigned int CheckRemoteRights(
 	address_t 		client_addr,
-	address_t 		server_addr)
+	address_t 		server_addr,
+	int				sock)
 {
 	// Full access for everybody. You can implement access rules here
-	return (unsigned int) -1;
+	return (unsigned int)-1;
 }
 
 int main(int argc, char *argv[])
@@ -329,7 +364,7 @@ int main(int argc, char *argv[])
 
 	server_addr.sin_family = AF_INET;
 	server_addr.sin_addr.s_addr = INADDR_ANY;
-	server_addr.sin_port = htons(8080);
+	server_addr.sin_port = htons(LISTEN_PORT);
 
 	if (bind(server, (sockaddr_t *)&server_addr, sizeof(server_addr)) < 0)
 	{
@@ -349,10 +384,10 @@ int main(int argc, char *argv[])
 	{
 		size_of_client_address = sizeof(client_addr);
 		client = accept(server, (sockaddr_t *)&client_addr, (socklen_t*)&size_of_client_address);
-		if (CheckRemoteRights(client_addr, server_addr) != (unsigned int)-1)
+		if (CheckRemoteRights(client_addr, server_addr, client) != (unsigned int)-1)
 		{
+			log_AcceptTcpConnection(stdout, client_addr, client);
 			close(client);
-			log_AcceptTcpConnection(stdout, client_addr, server_addr);
 			continue;
 		}
 #if ! defined(_WIN32)
@@ -372,7 +407,7 @@ int main(int argc, char *argv[])
 			break;
 
 		default:
-			log_AcceptTcpConnection(stdout, client_addr, server_addr);
+			log_AcceptTcpConnection(stdout, client_addr, client);
 			close(client);
 			break;
 		}
@@ -382,8 +417,8 @@ int main(int argc, char *argv[])
 			fprintf(stderr, "Unable accept connection: %d\n", WSAGetLastError());
 			exit(-1);
 		}
-		
-		log_AcceptTcpConnection(stdout, client_addr, server_addr);
+
+		log_AcceptTcpConnection(stdout, client_addr, client);
 
 		serve(client);
 #endif
@@ -391,5 +426,3 @@ int main(int argc, char *argv[])
 
 	return 0;
 }
-
-
