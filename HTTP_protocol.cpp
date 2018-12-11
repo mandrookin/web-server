@@ -1,11 +1,26 @@
 #include "stdafx.h"
 
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <vector>
+
+
 #if ! defined(_WIN32)
 	#include <sys/socket.h>
 	#include <arpa/inet.h>
 	#include <unistd.h>
 	#include <sys/types.h>
-#include <pwd.h>
+	#include <cstdlib>
+	#include <pwd.h>
+
+    template <typename T> std::string to_string( T n )
+    {
+        std::ostringstream stm ;
+        stm << n ;
+        return stm.str() ;
+    }
+
 #else
 	#pragma comment(lib,"Ws2_32.lib")
 	#include <winsock2.h>
@@ -15,11 +30,6 @@
 	#define close _close
 #endif
 
-
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <vector>
 
 using namespace std;
 
@@ -31,7 +41,7 @@ string Get_HTML(string filename, int &response_code)
 	string response;
 
 	string fullpath = http_root_folder + filename;
-	ifstream input(fullpath);
+	ifstream input(fullpath.c_str());
 	if (input.fail())
 	{
 		response = "<html><body><h1>Web Page " + filename + " not found!</h1>\r\n";
@@ -95,7 +105,7 @@ void response_on_get_request(int client, string pagename)
 	std::stringstream len;
 	len << html.length();
 
-	string http_response = "HTTP/1.1 " + std::to_string(response_code) + " OK\r\n";
+	string http_response = "HTTP/1.1 " + to_string(response_code) + " OK\r\n";
 	http_response += "Date: Wen 27 Nov 2018 17:30:15 GMT\r\n";
 	http_response += "Server: MyCoolServer/0.0.2\r\n";
 	http_response += "Content-Length: " + len.str() + "\r\n";

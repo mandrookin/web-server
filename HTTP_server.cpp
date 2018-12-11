@@ -96,6 +96,12 @@ void log_AcceptTcpConnection(
 // TODO: Set HTTP_ROOT by config or/and by command line parameter
 void Prepare_HTTP_ROOT()
 {
+    char * env_root = getenv("HTTP_ROOT");
+    if(env_root != NULL)
+    {
+	http_root_folder = env_root;
+	return;
+    }
 #if defined (_WIN32)
 	http_root_folder = programm_path.substr(0, programm_path.find_last_of("\\") + 1);
 #else
