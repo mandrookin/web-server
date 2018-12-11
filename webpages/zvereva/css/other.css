@@ -1,0 +1,19 @@
+a:focus {
+    outline: none;
+}
+
+.toggle-open {
+    display: flex;
+}
+
+.flex {
+    display: flex !important;
+}
+
+.none {
+    display: none !important;
+}
+
+.gray {
+    color: #888888;
+}
