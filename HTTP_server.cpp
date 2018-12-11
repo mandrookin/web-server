@@ -41,8 +41,8 @@ string http_root_folder;
 extern void  serve(int client);
 
 // 
-// Функция возвращает строку с IP-адресом WEB-браузера, соединившегося с сервером.
-// IP-адрес "вычисляется" на основе соединённого соекта
+// Р¤СѓРЅРєС†РёСЏ РІРѕР·РІСЂР°С‰Р°РµС‚ СЃС‚СЂРѕРєСѓ СЃ IP-Р°РґСЂРµСЃРѕРј WEB-Р±СЂР°СѓР·РµСЂР°, СЃРѕРµРґРёРЅРёРІС€РµРіРѕСЃСЏ СЃ СЃРµСЂРІРµСЂРѕРј.
+// IP-Р°РґСЂРµСЃ "РІС‹С‡РёСЃР»СЏРµС‚СЃСЏ" РЅР° РѕСЃРЅРѕРІРµ СЃРѕРµРґРёРЅС‘РЅРЅРѕРіРѕ СЃРѕРµРєС‚Р°
 //
 string get_peer_address(int sock, int &port)
 {
@@ -68,7 +68,7 @@ string get_peer_address(int sock, int &port)
 	return string(ipstr);
 }
 
-// Печать в файл информации о входящем TCP соединении
+// РџРµС‡Р°С‚СЊ РІ С„Р°Р№Р» РёРЅС„РѕСЂРјР°С†РёРё Рѕ РІС…РѕРґСЏС‰РµРј TCP СЃРѕРµРґРёРЅРµРЅРёРё
 // It takes an IP address of interface which accepted connection
 void log_AcceptTcpConnection(
 	FILE		*	file,
@@ -96,6 +96,12 @@ void log_AcceptTcpConnection(
 // TODO: Set HTTP_ROOT by config or/and by command line parameter
 void Prepare_HTTP_ROOT()
 {
+    char * env_root = getenv("HTTP_ROOT");
+    if(env_root != NULL)
+    {
+	http_root_folder = env_root;
+	return;
+    }
 #if defined (_WIN32)
 	http_root_folder = programm_path.substr(0, programm_path.find_last_of("\\") + 1);
 #else
@@ -121,7 +127,7 @@ unsigned int CheckRemoteRights(
 }
 
 //
-// Главная функция сервера. Вход в программу - функция main()
+// Р“Р»Р°РІРЅР°СЏ С„СѓРЅРєС†РёСЏ СЃРµСЂРІРµСЂР°. Р’С…РѕРґ РІ РїСЂРѕРіСЂР°РјРјСѓ - С„СѓРЅРєС†РёСЏ main()
 //
 int main(int argc, char *argv[])
 {
