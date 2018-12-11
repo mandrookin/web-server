@@ -1,0 +1,383 @@
+
+*{  box-sizing: border-box;}
+
+
+#container {
+   width: 60%;
+    margin: 0 20% 0 20%;
+   
+    background: white;
+}
+
+body {
+    background: url(../img/fon2.jpg);
+    margin: 0;
+    position: relative;
+    background-attachment: fixed;
+  
+}
+
+#verh {
+    background: #3c3c3c;
+    color: #cccccc;
+    height: 40px;
+}
+
+#logo {
+    height: 400px;
+    background: #ddd;
+}
+
+#navigation {
+    background: #2fc222;
+    height: 60px;
+}
+
+#navigation ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+#navigation ul li {
+   height: 60px;
+    width: 25%;
+    list-style-type: none;
+    text-align: center;
+    border-right: 1px solid #89e381;
+}
+
+#navigation ul li a {
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 60px;
+    display: block;
+    color: white;
+}
+
+#navigation ul li a:hover{
+background: #2baa20;
+}
+
+#search {
+    width: 20%;
+    height: 40px;
+    float: right;
+    padding-right: 10px;
+}
+
+
+
+#search form {
+   padding: 4% 0 4% 4%;
+    position: relative; 
+}
+
+
+#search form input{
+background: #000;
+    color: #cccccc;
+    outline: none;
+    border: none;
+    height: 20px;
+    cursor: pointer;
+}
+
+
+#search form .knopka{
+     background: #000;
+    padding: 0;
+    border: none;
+    outline: none;
+    position: absolute;
+    top:27%;
+    right: 0;
+    height: 17px;
+   
+    
+}
+
+#search form .knopka img{
+    display: inline-block;
+background-position: 0px 0px;
+    width: 22px;
+opacity: 0.5;}
+
+
+#search form .knopka:hover img{
+opacity: 1;
+}
+
+#search .fff:hover .knopka img{
+opacity: 1;
+}
+
+#search form input {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+#timer {
+    width: 52.2%;
+    height: 100%;
+    margin-left: 1%;
+    
+}
+
+#timer p {
+    box-sizing: border-box;
+    padding-top: 10px;
+    margin: 0;
+    font-weight: 900;
+    display: block;
+    height: 40px;
+    width: 344px;
+    text-align: center;
+    float: left;
+}
+
+#chet {    
+    display: flex;
+    width: 189px;
+        padding-top: 10px;
+    cursor: default;
+    margin: 0;
+}
+
+#content {
+    width: 100%;
+}
+
+#footer {
+    width: 60%;
+    height: 60px;
+    background: #3c3c3c;
+    position: absolute;
+    bottom: 0px;
+}
+
+#content .text_1 {
+    text-transform: uppercase;
+    font-size: 20px;
+   
+}
+
+#content article {
+    width: 75%;
+    padding: 15px 0 60px 0;
+    margin: auto;  
+    font-family: "Trebuchet MS", sans-serif;
+}
+#content article #history-img{
+margin: 0 10%;
+    width: 80%;
+}
+
+#content article .history-text{
+text-indent: 30px;
+}
+
+#content article .slider{
+height: 400px;
+}
+
+#footer #foot-text p{
+display: block;
+width: 60%;
+    margin: 6px 0 0 13px;
+padding:0 8%;
+float: left;
+text-align: center;
+color: #ddd
+}
+
+#footer #foot-text a{
+    color: #ddd;
+}
+
+#footer #foot-text p .footer-polz:hover{
+    color: #ededed;
+}
+
+#footer #foot-com {
+    position: absolute;
+    right: 0;
+   
+    width: 210px;
+    height: 60px;
+}
+
+#footer #foot-com p{
+margin:  5px 5px 0 5px;
+    color: #ddd;
+    font-size: 20px
+}
+
+#footer #foot-com #log-com{
+height: 30px;
+    width: 130px;
+    margin-left: 34px;
+}
+
+#footer #foot-com #log-com img{
+height: 20px;
+    width: 30px;
+    margin: 4px 0 0 10px;
+    opacity: 0.5;  
+}
+
+#footer #foot-com #log-com .logs:hover{
+opacity: 1;
+}
+#logtime-left {
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-top: 3px;
+    opacity: 0.3;
+}
+
+#logtime-right {
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin-top: 3px;
+    opacity: 0.3;
+}
+
+#info-svyz {
+    height: 40px;
+    width: 20%;
+    float: right;
+    display: flex;
+    margin-right: 35px;
+}
+
+#info {
+    height: 40px;
+    width: 40%;
+    text-align: center;
+    padding-top: 7px;
+}
+
+#info a{
+color: #838383;
+    text-decoration: none; 
+}
+
+#info a:hover{
+    text-decoration: underline;
+    color: #ddd
+}
+
+#svyz {
+    height: 40px;
+    width: 50%;
+    text-align: center;
+}
+
+#svyz a{
+color: #838383;
+    text-decoration: none; 
+}
+
+#svyz a:hover{
+    text-decoration: underline;
+    color: #ddd;
+}
+
+
+#content .news {
+    margin: auto;
+    padding-top: 20px;
+    height: 200px;
+}
+
+.news img{
+float: left;
+    margin: 0 20px 0 0;
+    height: 100%;
+    width: 170px;
+}
+
+.news #text-news{
+height: 100%;
+}
+
+.news #text-news #date-news{
+font-size: 13px;
+    margin: 0;
+}
+
+.news #text-news a{
+color:forestgreen;
+    text-decoration: none;
+}
+.news #text-news a h3{
+ margin: 0;
+}
+
+.news #text-news .click-news:hover{
+text-decoration: underline;
+    cursor: pointer;
+}
+
+#content .news-one img{
+width: 100%;
+}
+
+#content .news-one h1{
+margin: 20px 0;
+    font-weight: 100;
+    font-family: "Trebuchet MS", sans-serif;  
+}
+
+#content .news-one p{
+font-family: "Trebuchet MS", sans-serif;
+    font-size: 15px;
+}
+
+.text-raspisanie {
+    text-align: center;
+}
+
+.news hr{
+    margin: 50px 0;
+}
+
+@media screen and (max-width: 1911px) {
+    #timer p{
+    text-align: center;
+        width: 80%;
+    }
+    #chet{
+    margin: 5px auto;
+        padding: 0;
+    }
+    #logtime-right{
+    float:none;
+    }
+    #verh{
+    height: auto;
+    }
+    .footer-prava{
+    display: none;
+    }
+    #footer #foot-text p{
+    padding: 0 4%;
+        text-align: left;
+        width: 40%;
+ }
+}
+
+@media screen and (max-width: 1549px){
+      #footer #foot-text p{font-size: 12px;}
+    #content #first-main-img{display: none;}
+    
+  
+}
