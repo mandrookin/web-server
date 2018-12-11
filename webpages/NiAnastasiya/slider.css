@@ -1,0 +1,32 @@
+
+.Portfolio_Showcase1 img{
+	height: 30%;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.Portfolio_Showcase1 input{
+	position: absolute;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.Portfolio_Showcase1 label{
+	overflow: hidden;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background-color: green;
+	border-radius: 50%;
+	z-index: 9999;
+}
+
+.Portfolio_Showcase1 input:checked +label +img{
+	display: block;
+}
+
+.Portfolio_Showcase1 input:checked +label{
+	background-color: red;
+}
