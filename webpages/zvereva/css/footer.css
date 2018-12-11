@@ -1,0 +1,74 @@
+
+footer {
+    max-width: 100vw;
+    display: flex;
+    height: 20vh;
+    flex-direction: row;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif
+}
+
+.list-left, .list-right{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    padding: 2vh 4vw;
+}
+
+/* правая часть футера */
+
+.list-right{
+    background-color: #ededeb;
+}
+
+.list-right > ul{
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.7rem;
+    width: 50%;
+}
+
+.list-right > ul a{
+    color: #898989;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    white-space: nowrap;
+    outline: none;
+}
+
+.list-right > ul a:hover{
+    transition: 0.3s;
+    border-bottom: 1px solid #898989;
+}
+
+/* левая часть футера */
+
+.list-left{
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #898989;
+}
+
+.list-left > p:first-child{
+    font-size: 0.7rem;
+    margin-bottom: 1vh;
+}
+
+.list-left > p:last-child{
+    margin-top: 1vh;
+    font-size: 0.6rem;
+}
+
+.list-left > p:last-child > a{
+    text-decoration: none;
+    color: #898989;
+    border-bottom: 1px solid transparent;
+    outline: none;
+}
+
+.list-left > p:last-child > a:hover{
+    transition: 0.3s;
+    border-bottom: 1px solid #898989;
+}
