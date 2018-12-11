@@ -377,7 +377,7 @@ font-family: "Trebuchet MS", sans-serif;
 
 @media screen and (max-width: 1549px){
       #footer #foot-text p{font-size: 12px;}
-    #content #first-main-img{display: none;}
+    #content #first-main-img{display: none;} 
     
   
 }
