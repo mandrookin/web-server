@@ -1,0 +1,849 @@
+ * {
+     margin: 0;
+     padding: 0;
+     outline: none;
+ }
+
+ul{
+    list-style: none;
+}
+
+ section {
+     display: flex;
+     margin: auto;
+     background-color: #efefef;
+     margin: 20px;
+     font-family: arial;
+     padding: 10px 20px 0 35px;
+     height: 590px;
+     /* overflow: hidden;*/
+ }
+
+ h2 {
+     font-weight: normal;
+     color: gray;
+     margin-bottom: 10px;
+ }
+
+ mark {
+     background-color: transparent;
+     font-weight: bold;
+ }
+
+ .HomeLeft-column,
+ .AboutRight-column,
+ .Portfolio2Left-column {
+     margin: auto;
+ }
+
+ /*Section1*/
+
+ .HomeLeft-column {
+     position: relative;
+     width: 55%;
+ }
+
+ .HomeRight-column {
+     position: relative;
+    
+ }
+
+ .HomeRight-column img {
+     height: 100% !important;
+     width: 818px !important;
+     position: relative;
+     z-index: 9999;
+ }
+
+ /*Section2*/
+
+ .AboutLeft-column img {
+     z-index: 9999;
+     height: 100%;
+     width: 550px;
+     position: relative;
+ }
+
+ .AboutRight-column p {
+     margin-bottom: 20px;
+ }
+
+ .AboutRight-column {
+     width: 50%;
+ }
+
+.visible{
+    display: block;
+ }
+
+.invisible{
+    display: none; 
+} 
+
+.radioOne, .radioTwo{
+    width: 30px;
+    height: 5px;
+    background-color: #656565;
+}
+
+.radioOne{
+    margin-right: 10px;
+}
+
+.radio-conteiner{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    
+}
+
+ .ico-conteiner a {
+     margin-right: 10px;
+     text-decoration: none;
+
+ }
+
+ .ico-conteiner img {
+     background-color: #656565;
+     height: 100%;
+ }
+
+ .ico1 {
+     width: 7px;
+     padding: 6px 11px;
+     position: relative;
+     z-index: 9999;
+ }
+
+ .ico2 {
+     width: 15px;
+     padding: 6px;
+ }
+
+ .ico3 {
+     width: 17px;
+     padding: 7px 5px;
+ }
+
+ .ico4 {
+     width: 15px;
+     padding: 4px 7px;
+ }
+
+
+ /*Section4*/
+
+ .Portfolio2Left-column {
+     width: 35%;
+ }
+
+ .Portfolio2Right-column {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .Portfolio2Right-column img {
+     height: 76%;
+     width: 570px;
+     align-items: center;
+     justify-content: center;
+     padding: 70px;
+ }
+
+ /*Section6*/
+
+ .Contact {
+     text-align: center;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     overflow: hidden;
+     position: relative;
+     margin-bottom: 20px;
+ }
+
+ form {
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+     width: 30%;
+     margin-top: 10px;
+ }
+
+ .Contact h2,
+ .Contact p,
+ .Contact form {
+     z-index: 10;
+ }
+
+ input {
+     width: 154px;
+ }
+
+ input[type="submit"] {
+     width: 86%;
+     margin-top: 16px;
+     padding: 5px;
+     background-color: #333;
+     border: 1px solid #333;
+     color: white;
+ }
+
+ input:nth-child(2) {
+     margin-left: 5px;
+ }
+
+ textarea {
+     width: 318px;
+     height: 80px;
+     margin-top: 17px;
+
+ }
+
+ .Contact p {
+     width: 67%;
+ }
+
+ /*псевдо*/
+
+ .HomeLeft-column::before {
+     content: "A";
+     font-family: 'Impact';
+     position: absolute;
+     font-size: 758px;
+     z-index: 9;
+     margin-top: -375px;
+     opacity: 0.2;
+     left: -30px;
+ }
+
+ .AboutLeft-column::before {
+     content: "P";
+     font-family: 'Impact';
+     position: absolute;
+     font-size: 758px;
+     z-index: 9;
+     margin-top: -175px;
+     opacity: 0.2;
+ }
+
+ /*.sliderB::before{
+	content:"О";
+	position: absolute;
+	font-size: 50.5rem;
+	z-index: 9;
+	margin-top: -155px;
+	opacity: 0.2; 
+}*/
+
+ .Portfolio2Left-column::before {
+     content: "L";
+     font-family: 'Impact';
+     position: absolute;
+     font-size: 757px;
+     z-index: 9;
+     margin-top: -375px;
+     opacity: 0.2;
+     left: 40px;
+ }
+
+ .SliderA::before {
+     content: "L";
+     font-family: 'Impact';
+     position: absolute;
+     font-size: 758px;
+     z-index: 9;
+     margin-top: -175px;
+     opacity: 0.2;
+     left: 40px;
+ }
+
+ .Contact h2::before {
+     content: "O";
+     font-family: 'Impact';
+     position: absolute;
+     font-size: 726px;
+     z-index: 9;
+     opacity: 0.6;
+     left: 30px;
+     top: -146px;
+ }
+
+ .AboutRight-column h2::before {
+     content: '';
+     display: block;
+     width: 60px;
+     height: 2px;
+     margin: 12px 20px 0 0;
+     background-color: #656565;
+     float: left;
+ }
+
+ .HomeLeft-column::after {
+     content: '';
+     display: block;
+     width: 2px;
+     height: 60px;
+     margin-top: 20px;
+     background-color: #656565;
+     float: left;
+ }
+
+ .Portfolio2Left-column::after {
+     content: '';
+     display: block;
+     width: 2px;
+     height: 60px;
+     margin-top: 20px;
+     background-color: #656565;
+     float: left;
+ }
+
+
+
+ @media all and (max-width: 1280px) {
+
+
+     /*Section1*/
+     .HomeLeft-column {
+         margin-right: 30px;
+         width: 60%;
+     }
+     /*Section2*/
+     .AboutRight-column p {
+         margin-bottom: 20px;
+     }
+
+     .AboutRight-column {
+         width: 50%;
+         margin-right: 30px;
+     }
+
+     .ico-conteiner a {
+         margin-right: 10px;
+         text-decoration: none;
+
+     }
+
+     .ico-conteiner img {
+         background-color: #656565;
+         height: 100%;
+     }
+
+     .ico1 {
+         width: 7px;
+         padding: 6px 11px;
+         position: relative;
+         z-index: 9999;
+     }
+
+     .ico2 {
+         width: 15px;
+         padding: 6px;
+     }
+
+     .ico3 {
+         width: 17px;
+         padding: 7px 5px;
+     }
+
+     .ico4 {
+         width: 15px;
+         padding: 4px 7px;
+     }
+
+     .ico:hover {
+         background-color: #333;
+     }
+
+     /*Section4*/
+     .Portfolio2Left-column {
+         width: 70%;
+         margin-right: 30px;
+     }
+
+
+     /*Section6*/
+     .Contact {
+         text-align: center;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         overflow: hidden;
+     }
+
+     form {
+         display: flex;
+         justify-content: center;
+         flex-wrap: wrap;
+         width: 30%;
+         margin-top: 10px;
+     }
+
+     .Contact h2,
+     .Contact p,
+     .Contact form {
+         z-index: 10;
+     }
+     input {
+         width: 154px;
+     }
+
+     input[type="submit"] {
+         width: 86%;
+         margin-top: 16px;
+         padding: 5px;
+         background-color: #333;
+         border: 1px solid #333;
+         color: white;
+     }
+
+     input:nth-child(2) {
+         margin-left: 5px;
+     }
+
+     textarea {
+         width: 318px;
+         height: 80px;
+         margin-top: 17px;
+
+     }
+
+     .Contact p {
+         width: 67%;
+     }
+
+     /*псевдо*/
+     /*A*/
+     .HomeLeft-column::before {
+         font-size: 758px;
+         margin-top: -407px;
+         left: -29px;
+     }
+
+     /*P*/
+     .AboutRight-column::before {
+         margin-top: -597px;
+         left: 30px;
+     }
+
+     /*.sliderB::before{
+	content:"О";
+	position: absolute;
+	font-size: 50.5rem;
+	z-index: 9;
+	margin-top: -155px;
+	opacity: 0.2; 
+}*/
+     /*L*/
+     .Portfolio2Left-column::before {
+         font-size: 759px;
+         margin-top: -416px;
+         left: 30px;
+     }
+
+     /*L*/
+     .SliderA::before {
+         font-size: 759px;
+         margin-top: -176px;
+         left: 30px;
+     }
+
+     /*O*/
+     .Contact h2::before {
+         font-size: 725px;
+         top: -144px;
+         left: 30px;
+     }
+
+
+     .AboutRight-column h2::before,
+     .HomeLeft-column::after,
+     .Portfolio2Left-column::after {
+         display: none;
+     }
+ }
+
+ @media all and (max-width: 1024px) {
+     form {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         align-content: center;
+         margin: 0 !important;
+     }
+
+     input {
+         width: 314px;
+         margin-top: 10px;
+         padding: 2px;
+     }
+
+     input:nth-child(2) {
+         margin-left: 0 !important;
+     }
+
+     textarea {
+         width: 318px;
+         height: 80px;
+         margin-top: 10px;
+
+     }
+
+
+     /*псевдо*/
+     /*A*/
+     .HomeLeft-column::before {
+         font-size: 757px;
+         margin-top: -425px;
+         left: -371px;
+     }
+
+     /*P*/
+     .AboutRight-column::after {
+         margin-top: -622px;
+         right: 70%;
+
+     }
+
+     /*.sliderB::before{
+	content:"О";
+	position: absolute;
+	font-size: 50.5rem;
+	z-index: 9;
+	margin-top: -155px;
+	opacity: 0.2; 
+}*/
+     /*L*/
+     .Portfolio2Left-column::before {
+         margin-top: -424px;
+         left: 30px;
+     }
+
+     /*L*/
+     .SliderA::before {
+         margin-top: -176px;
+     }
+
+     /*O*/
+     .Contact h2::before {
+         top: -145px;
+     }
+
+     .AboutRight-column h2::before,
+     .HomeLeft-column::after,
+     .Portfolio2Left-column::after {
+         display: none;
+     }
+ }
+
+ @media all and (max-width: 375px) {
+     section {
+         height: 395px;
+         padding: 0px;
+         text-align: center;
+     }
+
+
+     .HomeRight-column,
+     .AboutLeft-column,
+     .Portfolio2Right-column {
+         display: none;
+     }
+
+     /*Section1*/
+     .HomeLeft-column,
+     .Portfolio2Left-column {
+         margin: auto !important;
+     }
+
+     .HomeLeft-column {
+         width: 60%;
+     }
+     /*Section2*/
+     .none {
+         display: none;
+     }
+
+     .AboutRight-column {
+         margin: auto !important;
+     }
+
+     .ico-conteiner a {
+         margin-right: 10px;
+         text-decoration: none;
+
+     }
+
+
+     .ico1,
+     .ico2,
+     .ico3,
+     .ico4 {
+         position: relative;
+         z-index: 9999;
+     }
+
+     /*Section4*/
+     .Portfolio2Left-column {
+         width: 70%;
+
+     }
+
+
+     /*Section6*/
+     .Contact {
+         text-align: center;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         overflow: hidden;
+     }
+
+     form {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         align-content: center;
+         margin: 0 !important;
+     }
+
+     .Contact h2,
+     .Contact p,
+     .Contact form {
+         z-index: 10;
+     }
+     input {
+         width: 314px;
+         margin-top: 10px;
+         padding: 2px;
+     }
+     input:nth-child(2) {
+         margin-left: 0 !important;
+     }
+
+     textarea {
+         width: 318px;
+         height: 80px;
+         margin-top: 10px;
+
+     }
+
+     input[type="submit"] {
+         margin-top: 10px;
+     }
+
+     /*псевдо*/
+     /*A*/
+     .HomeLeft-column::before {
+         margin-top: -201px !important;
+         left: -26px !important;
+         font-size: 498px !important;
+     }
+
+     /*P*/
+     .AboutRight-column::after {
+         content: "P";
+         font-family: 'Impact';
+         font-size: 499px;
+         margin-top: -436px !important;
+         right: 15%;
+         position: absolute;
+         z-index: 9;
+         opacity: 0.2;
+     }
+
+     /*.sliderB::before{
+	content:"О";
+	position: absolute;
+	font-size: 50.5rem;
+	z-index: 9;
+	margin-top: -155px;
+	opacity: 0.2; 
+}*/
+     /*L*/
+     .Portfolio2Left-column::before {
+         font-size: 498px;
+         margin-top: -224px;
+         left: 100px;
+     }
+
+     /*L*/
+     .SliderA::before {
+         font-size: 498px;
+         margin-top: -108px;
+         left: 100px;
+     }
+
+     /*O*/
+     .Contact h2::before {
+         font-size: 478px;
+         top: -96px;
+         left: 50px;
+     }
+
+     .AboutRight-column h2::before,
+     .HomeLeft-column::after,
+     .Portfolio2Left-column::after {
+         display: none;
+     }
+
+ }
+
+ @media all and (max-width: 320px) {
+     section {
+         height: 395px;
+         padding: 0px;
+         text-align: center;
+     }
+
+
+     .HomeRight-column,
+     .AboutLeft-column,
+     .Portfolio2Right-column {
+         display: none;
+     }
+
+     /*Section1*/
+     .HomeLeft-column,
+     .Portfolio2Left-column {
+         margin: auto !important;
+     }
+
+     .HomeLeft-column {
+         width: 60%;
+     }
+     /*Section2*/
+     .none {
+         display: none;
+     }
+
+     .AboutRight-column {
+         margin: auto !important;
+     }
+
+     .ico-conteiner a {
+         margin-right: 10px;
+         text-decoration: none;
+
+     }
+
+
+     .ico1,
+     .ico2,
+     .ico3,
+     .ico4 {
+         position: relative;
+         z-index: 9999;
+     }
+
+     /*Section4*/
+     .Portfolio2Left-column {
+         width: 70%;
+
+     }
+
+
+     /*Section6*/
+     .Contact {
+         text-align: center;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         overflow: hidden;
+     }
+
+     form {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         align-content: center;
+         margin: 0 !important;
+     }
+
+     .Contact h2,
+     .Contact p,
+     .Contact form {
+         z-index: 10;
+     }
+     input {
+         width: 160px;
+         margin-top: 10px;
+         padding: 2px;
+     }
+     input:nth-child(2) {
+         margin-left: 0 !important;
+     }
+
+     textarea {
+         width: 160px;
+         height: 80px;
+         margin-top: 10px;
+
+     }
+
+     input[type="submit"] {
+         margin-top: 10px;
+     }
+
+     /*псевдо*/
+     /*A*/
+     .HomeLeft-column::before {
+         margin-top: -173px;
+         left: -42px;
+         font-size: 497px;
+     }
+
+     /*P*/
+     .AboutRight-column::after {
+         content: "P";
+         font-family: 'Impact';
+         font-size: 499px;
+         margin-top: -461px;
+         right: 15%;
+         position: absolute;
+         z-index: 9;
+         opacity: 0.2;
+     }
+
+     /*.sliderB::before{
+	content:"О";
+	position: absolute;
+	font-size: 50.5rem;
+	z-index: 9;
+	margin-top: -155px;
+	opacity: 0.2; 
+}*/
+     /*L*/
+     .Portfolio2Left-column::before {
+         font-size: 498px;
+         margin-top: -206px;
+         left: 100px;
+     }
+
+     /*L*/
+     .SliderA::before {
+         font-size: 498px;
+         margin-top: -108px;
+         left: 100px;
+     }
+
+     /*O*/
+     .Contact h2::before {
+         font-size: 478px;
+         top: -96px;
+         left: 30px;
+     }
+
+     .AboutRight-column h2::before,
+     .HomeLeft-column::after,
+     .Portfolio2Left-column::after {
+         display: none;
+     }
+
+ }

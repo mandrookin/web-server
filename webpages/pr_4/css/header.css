@@ -1,0 +1,171 @@
+ @font-face {
+    font-family: Roboto;
+    src: url(fonts/Roboto-Regular.ttf);
+    font-weight: normal
+
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(fonts/Roboto-Bold.ttf);
+    font-weight: bold
+
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(fonts/Roboto-Light.ttf);
+    font-weight: 300;
+}
+body{
+    font-family: Roboto,sans-serif ; 
+    font-size: 100%;
+    line-height: 1.5;
+}
+a{
+    text-decoration: none;
+}
+.center-position{
+    position: absolute;
+    width: 80vw;
+    left: calc(50% - 40vw);
+    top: 0;
+    bottom: 0;
+}
+header{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 8%;
+}
+.logo {
+    height: 100%;
+}
+.logo img{
+    height: 100%;
+    width: auto;
+}
+nav{
+    width: 45%;
+    height: 100%;
+}
+nav ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+nav ul li{
+    height: 100%;
+}
+nav a {
+    font-size: 0.8em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    text-decoration: none;
+}
+nav a:hover{
+    border-bottom: 2px solid #28c8c6;
+}
+nav ul li:last-child{
+    height: 80%;
+    width: 25%;
+}
+nav li>button{
+    background-color: #a100ff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 5%;
+    border-color: transparent;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+nav li input{
+    background-color: transparent;
+    border: transparent;
+    height: 100%;
+    width: 50%;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+}
+section.captioned-gallery > section.center-position > section{
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;    
+    color: #fff;
+}
+section.captioned-gallery section h1{
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 4%;
+    line-height: 1;
+
+}
+section.captioned-gallery section p{
+    width: 40%;
+    margin-bottom: 2%;
+    font-size: 0.9em;
+}
+ul.form {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+ul.form li:not(:last-child){
+    height: 70%;
+    width: 20%;
+    margin-right: 2%;
+    background-color: #fff;
+    border-radius: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul.form li input{
+    width: 85%;
+    height: 90%;
+    background: transparent;
+    border: transparent;
+    outline: none;
+}
+ul.form li input::placeholder{
+    color: #474747;
+    font-weight: bold;
+}
+ul.form li:last-child{
+    height: 70%;
+    width: 5%;
+}
+ul.form li button{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    background-color: #28c8c6;
+    border-color: transparent;
+}
+ul.form li button img{
+    width: 40%;
+    height: 40%;
+
+}

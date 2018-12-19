@@ -1,0 +1,336 @@
+section.style{
+    background-image: url(../img/background-elipse.jpg);
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+section.style div{
+    height: 7rem ;
+    width: 7rem ;
+    top: -3.5rem;
+    position: relative;
+    border-radius: 50%;
+    background-image: url(../img/background-elipse.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+section.style h2{
+    margin-bottom: 2%;
+    font-size: 2em;
+    color: #333b42;
+    font-weight: bold;
+}
+section.style p{
+    text-align: center;
+    width: 40rem;
+    margin-bottom: 3%;
+    color: #74797e;
+}
+section.style> img{
+    width: 30rem;
+}
+/*конец первой секции*/
+section.features{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid #e1dee4;
+}
+section.features > div:first-child{
+    height: 7rem ;
+    width: 7rem ;
+    position: relative;
+    top: -3.5rem;
+    border-radius: 50%;
+    background-color: #28c8c6;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+section.features section{
+    width:75%;
+    display:  flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section.features section> h2{
+    margin-bottom: 2%;
+    font-size: 2em;
+    color: #333b42;
+    font-weight: bold;
+}
+section.features section> p{
+    font-size: 0.8rem;
+    width: 65%;
+    text-align: center;
+    margin-bottom: 3%;
+    color: #74797e;
+}
+section.features section ul{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+section.features ul li{
+    margin-bottom: 2rem;
+    width: 15rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+section.features ul li >div{
+    width: 7rem;
+    height: 7rem;
+    background-color: #a100ff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+section.features ul li h2{
+    margin-top: 10%;
+    margin-bottom: 2%;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color:#333b42;
+}
+section.features ul li p{
+    color: #74797e;
+    font-weight:bolder;
+    line-height: 1.5;
+    font-size: 0.8rem;
+}
+section.features > div:last-child{
+    height: 7rem ;
+    width: 7rem ;
+    position: relative;
+    top: 3.5rem;
+    border-radius: 50%;
+    border-bottom: 2px solid #e1dee4;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+/*конец второй секции*/
+section.cuidelines{
+    background-color: #f6f9fa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section.cuidelines section:first-child{
+    text-align: center;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section.cuidelines h2{
+    margin-top: 10%;
+    margin-bottom: 2%;
+    font-size: 2em;
+    color: #333b42;
+    font-weight: bold;
+}
+section.cuidelines p{
+    color: #74797e;
+    font-weight:bolder;
+    line-height: 1.5;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+}
+section.cuidelines section.category >ul{
+    width: 40rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+section.cuidelines section.category li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #28c8c6;
+    
+}
+section.cuidelines section.category a{
+    padding: 1rem 2.55rem;
+    text-decoration: none;
+    font-weight: bolder;
+    color: #28c8c6; 
+    background: #fff; 
+}
+section.cuidelines section.category a.selected{
+    background: #28c8c6;
+    color: #fff;
+}
+section.cuidelines section.category a:hover{
+    background: #28c8c6;
+    color: #fff;
+}
+section.cuidelines div.section-items {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    width: 60rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+section.cuidelines div.section-items figure{
+    width: 18rem;
+    background-color: #fff;
+    border-radius: 2%;
+    padding-bottom: 1rem;
+
+}
+section.cuidelines div.section-items figure img{
+    width: 100%;
+    border-radius: 2% 2% 0 0;
+}
+section.cuidelines div.section-items figcaption{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+section.cuidelines div.section-items figcaption a{
+    color: #333b42;
+    text-decoration: none;
+}
+section.cuidelines div.section-items figcaption img{
+    width: 0.5rem;
+    height: 1rem;;
+}
+/*конец третьей секции*/
+body>section:nth-last-child(3){
+    background-image: url(../img/backgr21.jpg);
+    background-size: cover;
+    padding: 18em 0 20em ;
+    color: #fff;
+}
+body>section:nth-last-child(3)> div{
+    width: 45em;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+body>section:nth-last-child(3)  img{
+    margin-right: 2em;
+    height: 10em;
+}
+body>section:nth-last-child(3) section {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+body>section:nth-last-child(3) section h2{
+    margin-bottom: 1rem;
+    font-size: 3.3em;
+    line-height: 1;
+    font-weight: bold;
+}
+body>section:nth-last-child(2){
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+body>section:nth-last-child(2)>a{
+    margin: 12rem 0 12rem 2rem;
+    padding: 1rem;
+    background:  #919191;
+    border-radius: 5%;
+    display: flex;
+}
+body>section:nth-last-child(2)>a img{
+    height: 1rem;
+}
+body>section:nth-last-child(2)> img{
+    position: absolute;
+    margin-top: -12rem;
+    right: 10%;
+    width: 60%;
+}
+footer{
+    display: flex;
+    justify-content: center;
+}
+footer> ul{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+footer ul.sharing{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin: 4rem 0;
+} 
+footer ul.sharing a{
+    color: #fff;
+    width: 5rem;
+    padding: 0.3rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+footer ul.sharing li:first-child a{
+    background: #69b6f2;
+    border-radius: 5%;
+    margin-right: 2rem;
+}
+footer ul.sharing li:last-child a{
+    background: #3a579a;
+    border-radius: 5%;
+}
+footer> ul > li:last-child{
+    color: #74797e;
+}
+footer> ul > li:last-child a{
+    color: #74797e;
+}
+footer> ul > li:last-child >ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+footer> ul > li:last-child >ul >li:last-child{
+    display: flex;
+    justify-content: flex-end;
+}
+ul.list{
+    display: flex;
+    flex-direction: row;
+}
+ul.list> li{
+    margin: 0 2rem 2rem 0;
+}
+footer> ul > li:last-child p{
+    margin-bottom: 10rem;
+}
+

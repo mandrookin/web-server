@@ -1,0 +1,272 @@
+@media (max-width: 770px) {
+
+    header>section:last-child {
+        padding: 2vh 5vw 2vh 5vw;
+        justify-content: space-between;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .new-navbar li {
+        margin: 8px 0;
+    }
+
+    .new-navbar nav a {
+        font-size: 0.9rem;
+    }
+
+    .search {
+        max-width: 40%;
+        width: 40%;
+        margin: 2vh 0 2vh 4vh;
+    }
+
+    .search>input {
+        width: 80%;
+        border: 1px solid #000;
+    }
+
+    section>nav,
+    .search {
+        display: none;
+    }
+
+    .button {
+        display: flex;
+    }
+
+    .content {
+        max-width: 90vw;
+    }
+
+    .post {
+        margin: 1vh 1vw;
+    }
+
+    .about,
+    .form {
+        display: none;
+    }
+
+    .icons {
+        width: 40vw;
+    }
+
+    .form {
+        padding: 1%;
+        width: 80%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding-bottom: 2vh;
+        margin-bottom: 4vh;
+        display: flex;
+    }
+
+    .form>form {
+        width: 75%;
+    }
+
+    input[type="submit"],
+    input[type="email"] {
+        padding: 1.5vh 1vh;
+    }
+
+    input[type="submit"] {
+        width: 30%;
+    }
+
+    .list-right>ul {
+        height: 80%;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-around
+    }
+
+    .content>.posts {
+        max-width: 100%;
+    }
+
+    .posts-right,
+    .posts-left {
+        max-width: 50%;
+    }
+
+    div.slider-caption {
+        margin-bottom: 10px;
+    }
+
+    div.slider-caption>h1,
+    div.slider-caption>h2 {
+        font-size: 1.8rem;
+        padding: 5px 0;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .logo {
+        padding-top: 2vh;
+        font-size: 2.4rem;
+    }
+
+    .post>p,
+    .post>a {
+        margin: 15px 0 15px 0;
+    }
+
+    .icons {
+        width: 60vw;
+    }
+
+    .post>h3 {
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+    }
+
+    div.slider-caption p {
+        font-size: 0.8rem;
+    }
+
+    div.slider-caption>h1,
+    div.slider-caption>h2 {
+        font-size: 1.4rem;
+        padding: 3px 0;
+    }
+
+    section.captioned-gallery {
+        height: 28vh;
+    }
+
+    figure.slider {
+        animation: none;
+        height: 100%;
+    }
+
+    .content {
+        max-width: 95vw;
+    }
+
+    .headline {
+        width: 40vh;
+    }
+
+    .headline>h3 {
+        font-size: 1.5rem;
+    }
+
+    input[type="submit"],
+    input[type="email"] {
+        padding: 1vh 1vh;
+    }
+
+    .photos-left,
+    .photos-right {
+        width: 100% !important;
+    }
+
+    .list-left>p:last-child {
+        text-align: right;
+    }
+
+    .form>h3 {
+        font-size: 1.3rem;
+        margin: 10px 0 5px 0;
+    }
+}
+
+@media (min-width: 770px) {
+    .new-navbar {
+        display: none !important;
+    }
+
+    section>nav,
+    .search {
+        display: flex;
+    }
+
+    .form {
+        display: block;
+    }
+}
+
+@media (max-width: 912px) {
+
+    .tags>a::after {
+        font-size: 20px;
+        margin: 0 3px 0 3px;
+    }
+
+    .navbar {
+        width: 58vw !important;
+    }
+    
+    .form {
+        height: 100px;
+        padding: 4%;
+    }
+
+    .form>h3 {
+        font-size: 1.3rem;
+    }
+
+    
+    input[type="email"] {
+        padding: 1.2vh 0.3vw;
+        border: 1px solid #dfdfdf;
+        background-color: #f5f5f5;
+        margin: 0;
+        width: 70%;
+    }
+    
+    
+    input[type="submit"] {
+        font-size: 0.7rem;
+        padding: 1.2vh 0.3vw;
+    }
+    
+    .aside-post a.theme {
+        font-size: 0.8rem;
+    }
+    
+    .aside-post a.heading {
+        font-size: 1.1rem;
+        
+    }
+    
+}
+
+@media (max-width: 1200px) {
+    .navbar {
+        width: 50vw;
+    }
+}
+
+@media (min-width: 1500px){
+    html{
+        font-size: 22px;
+    }
+
+    .img-container > a{
+        font-size: 1rem;
+        left: 5px;
+        bottom: 40px;
+        padding: 10px;
+    }
+
+    .show-more .refresh {
+        width: 55px;
+        height: 55px;
+    }
+
+    .headline>h3 {
+        font-size: 2.5rem;
+    }
+
+    .logo img{
+        width: 200px;
+        height: 70px;
+    }
+}

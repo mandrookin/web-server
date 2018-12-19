@@ -1,0 +1,31 @@
+@keyframes animations {
+    0% { left: 0%; }
+    30% { left: 0%; }
+    35% { left: 0%; }
+    60% { left: -100%; }
+    65% { left: -100%; }
+    100% { left: -100%; }
+    }
+    section.captioned-gallery { 
+      max-width: 100vw;
+      height: 100%;
+      overflow: hidden; 
+      position: relative;
+    }
+    figure.slider { 
+      position: relative;
+      width: 500%;
+      font-size: 0;
+      animation: 10s animations infinite;
+      display: flex; 
+    }
+    figure.slider figure { 
+      width: 20%;
+      height: auto;
+    }
+    figure.slider img{
+    width: 100% ;
+    height: auto;
+    }
+
+  
