@@ -1,0 +1,57 @@
+*{
+  /* margin: 5;
+  padding: 1; */
+  list-style: none;
+}
+body {
+  background-color: #2a323b;  
+  color: white;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+  }
+
+ul>li>ul{
+  display: flex;
+  flex-direction: column;
+}
+
+ul>li>ul>li>ul{
+  display: flex;
+  flex-direction: row;
+}
+
+ul>li>ul>li>ul>li>ul{
+  display: flex;
+  flex-direction: column;
+}
+
+section > ul > li form {
+  display: flex;
+}
+
+section > ul > li form > input[type="submit"]{
+  border: 0; 
+  background: green;
+  color: white;
+  margin: 0;
+  width: 20;
+  transform: rotate(180deg);
+}
+
+a{
+  color:white;
+  text-decoration: none;
+}
+ul>li>ul>li>ul {
+  justify-content: flex-start;
+  display: flex;
+  width:80%;
+}
+section {
+  width: 980px;
+  margin: 0 auto;
+}
