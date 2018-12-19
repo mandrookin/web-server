@@ -1,6 +1,6 @@
 all:
 	g++  *.cpp -o http_serv
-	echo "export HTTP_ROOT='pwd'\"webpages\" & ./http_serv" > start 
+	echo "export HTTP_ROOT=`pwd`/webpages\n./http_serv" > start 
 	chmod +x start
 
 clean:
